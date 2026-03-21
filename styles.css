@@ -88,3 +88,28 @@ a{
     background: rgba(148, 163, 184, 0.15);
     opacity: 0.8;
 }
+
+.contact-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.contact-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: rgb(var(--font-color));
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: rgba(148, 163, 184, 0.2);
+    transform: translateY(-3px);
+    border-color: rgba(148, 163, 184, 0.4);
+}
