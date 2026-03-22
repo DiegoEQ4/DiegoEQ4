@@ -9,6 +9,11 @@ body {
     font-family: var(--inter-font), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-feature-settings: "ss03", "cv02", "cv11";
     color: rgb(var(--font-color));
+    background-image: radial-gradient(
+        rgba(148, 163, 184, 0.05) 1px,
+        transparent 1px
+    );
+    background-size: 30px 30px;
 }
 
 h1{
@@ -112,4 +117,157 @@ a{
     background: rgba(148, 163, 184, 0.2);
     transform: translateY(-3px);
     border-color: rgba(148, 163, 184, 0.4);
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgba(var(--font-color), 0.5);
+    position: relative;
+    padding-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.5);
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: rgb(var(--font-color));
+}
+
+.nav-item:hover::before {
+    background: rgb(var(--font-color));
+    transform: translateY(-50%) scale(1.5);
+}
+
+.nav-item.active {
+    color: rgb(var(--font-color));
+}
+
+.nav-item.active::before {
+    background: rgb(var(--font-color));
+    transform: translateY(-50%) scale(1.5);
+}
+.project-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* Imagen */
+.project-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* Contenido */
+.project-content {
+    padding: 16px;
+}
+
+.project-content h5 {
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* Links */
+.project-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+}
+
+.project-links a {
+    color: rgb(var(--font-color));
+    font-size: 18px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.icon-bg img {
+    width: 50%;
+    height: 60%;
+    opacity: 0.8;
+}
+
+.bg-circles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-circles span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.12;
+}
+
+.bg-circles span:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background: rgb(47, 100, 185); /* azul */
+    top: 20%;
+    left: 10%;
+}
+
+.bg-circles span:nth-child(2) {
+    width: 250px;
+    height: 250px;
+    background: rgb(117, 58, 173); /* morado */
+    bottom: 10%;
+    right: 10%;
+}
+
+.container {
+    position: relative !important;
+    z-index: 1!important;
 }
